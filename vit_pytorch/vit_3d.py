@@ -68,7 +68,7 @@ class Transformer(nn.Module):
                 Attention(dim, heads = heads, dim_head = dim_head, dropout = dropout),
                 FeedForward(dim, mlp_dim, dropout = dropout)
             ]))
-    def forward(self, x):
+    def forward(self, x): 
         for attn, ff in self.layers:
             x = attn(x) + x
             x = ff(x) + x
